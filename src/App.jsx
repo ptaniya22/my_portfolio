@@ -3,7 +3,7 @@
 // import Navbar from './components/Navbar';
 // import About from './components/About';
 import './scss/main.scss'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes,BrowserRouter } from 'react-router-dom'
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
 
