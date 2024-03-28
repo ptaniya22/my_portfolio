@@ -21,10 +21,12 @@ function App() {
       <div className="container">
         <div className="box">
           {/* <Portfolio/> */}
+            <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/my_portfolio' : '/'}>
           <Routes>
             <Route path="/" element={<Portfolio/>}/>
             <Route path="/projects/" element={<Projects/>}/>
-          </Routes>
+            </Routes>
+            </BrowserRouter>
 
           {/* <Navbar />
           
