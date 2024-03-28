@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import React from 'react'
 import { Element, Link } from 'react-scroll'
- import { Link as LinkRouter } from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
+import proj from '../mainProjects.js'
 
 
 const list = [
@@ -9,9 +10,7 @@ const list = [
       { title: 'Projects', anchor: 'projects' },
       { title: 'Skills', anchor: 'skills' },
       { title: 'contacts', anchor: 'contacts' },
-    // { title: 'other', anchor: 'other' }
-
-    
+    // { title: 'other', anchor: 'other' }   
 
 ]
 
@@ -30,7 +29,7 @@ const Portfolio = () => {
                     <ul className="header_nav__list">
                         { list.map(item => (
                             <li  key={item.title}>
-                                <Link to={item.anchor}  activeClass="active" offset={-97} spy={true} hashSpy={true} smooth={true} duration={500}
+                                <Link to={item.anchor}  activeClass="active" offset={-98} spy={true} hashSpy={true} smooth={true} duration={500}
                                     // onClick={handleClick}
                                     // onClick={handleClick} className={click ? "header_nav__link active" : "header_nav__link"}>
                                      className="header_nav__link" >
@@ -59,9 +58,30 @@ const Portfolio = () => {
       </Element>
 
       <Element name="projects" >       
-         <div className="main__item"><h2>My projects</h2>
-          <p>This is the content of section projects *******************************************************************************************</p>
-          <LinkRouter to={`/projects/`}>see more</LinkRouter>
+          <div className="main__item">
+
+            {proj.map(el => (
+              
+            <div key={el.id} className="main__item_proj">
+                <img className="main__item_proj_img" src={el.img} alt="" />
+                <div className="main__item_proj_content">
+                  <a href={el.link}>{el.name}</a>
+                  <p>{el.text}</p>
+                  {/* {proj.language.forEach(element => {
+                    span(el)
+                    console.log(el)
+                  })} */}
+                </div>
+            </div>
+
+            ))}
+            
+            
+            
+          
+            
+            
+            <LinkRouter to={`/projects/`}>see more</LinkRouter>
 
         </div>         
       </Element>
@@ -81,6 +101,7 @@ const Portfolio = () => {
       
         
       
+    
       </section>
     </>
   )
