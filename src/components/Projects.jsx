@@ -3,8 +3,9 @@ import React from 'react'
 
 const Projects = () => {
   return (
-    <div>
-      MY PROJECTS
+    <div className='qwerty'>
+      <div className="asd">ASD</div>
+      <div className="dsa">DSA</div>
     </div>
   )
 }

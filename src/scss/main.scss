@@ -5,6 +5,7 @@
   --color: rgb(148 163 184);
   --hover-title-color: rgb(94 234 212);
   --skills-area-color: rgb(19 78 74);
+  --hover-item-color: rgba(148, 163, 184, 0.1);
 }
 
 * {
@@ -13,8 +14,11 @@
   box-sizing: border-box;
   font-family: "inter";
   font-weight: 400;
-  background: var(--background);
   color: var(--color);
+}
+
+body {
+  background: var(--background);
 }
 
 a {
@@ -84,29 +88,7 @@ ul {
       background-color: rgb(71 85 105);
       margin-right: 1rem;
     }
-    /******active*******/
-    // &_text{
-    //   font-size: 24px;
-    //   color: #e2e8f0;
-    // }
-    // &_indicator  {
-    //   background-color: #e2e8f0;
-    //   width: 4rem;
-    // }
-    /******active*******/
   }
-
-  // &_nav__link .active {
-
-  //   &_text {
-  //     font-size: 24px;
-  //     color: #e2e8f0;
-  //   }
-  //   &_indicator {
-  //     background-color: #e2e8f0;
-  //     width: 4rem;
-  //   }
-  // }
 }
 .main {
   display: flex;
@@ -114,10 +96,10 @@ ul {
   gap: 100px;
   width: 50%;
   &__item {
-    // max-width: 528px;
-    // background: lightblue;
-    // height: 90vh;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 
     &_about {
       display: flex;
@@ -130,15 +112,64 @@ ul {
         font-weight: 500;
       }
     }
+
     &_proj {
       max-width: 549px;
+      width: 100%;
       display: flex;
       flex-direction: row;
       gap: 20px;
-      padding-top: 20px;
+      padding: 20px;
       justify-content: space-between;
+      align-items: center;
+      &:hover {
+        background: var(--hover-item-color);
+        cursor: pointer;
+        // padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px -0.3px 1px 0px rgba(255, 255, 255, 0.5);
+        transition: all 0.15s;
+      }
+      &:hover &_link {
+        color: var(--hover-title-color);
+      }
+      &:hover svg {
+        fill: var(--hover-title-color);
+        transform: translate(7px, -7px);
+        transition: all 0.3s;
+      }
+      &_content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        // background: inherit;
+      }
       &_img {
         max-height: 100px;
+      }
+      &_link {
+        color: white;
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+      }
+      &_lang {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        list-style: none;
+        flex-wrap: wrap;
+        // background: inherit;
+      }
+      li {
+        color: var(--hover-title-color);
+        font-size: 13px;
+        background-color: rgba(45, 212, 191, 0.1);
+        border-radius: 9999px;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
       }
     }
   }
@@ -157,3 +188,13 @@ ul {
     }
   }
 }
+
+.qwerty {
+  background: teal;
+  height: 100px;
+}
+
+// .main__item_proj:hover {
+//   background: teal;
+//   cursor: pointer;
+// }

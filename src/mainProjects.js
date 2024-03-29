@@ -24,7 +24,7 @@ export default [
   },
   {
     id: 3,
-    name: 'Сайт туристического магазина GoTrip',
+    name: 'Сайт магазина GoTrip',
     img: GoTrip,
     link: 'https://ptaniya22.github.io/GoTrip/',
     text: 'Верстка страницы по макету туристического магазина GoTrip',
@@ -36,7 +36,7 @@ export default [
     img: js_middle,
     link: 'https://ptaniya22.github.io/js_middle/',
     text: 'Задача по поиску минимального, максимального, среднего значений среди заданных трех чисел',
-    language: 'JavaScript, HTML, CSS',
+    language: ['JavaScript', 'HTML', 'CSS'],
   },
   {
     id: 5,
@@ -44,6 +44,7 @@ export default [
     img: router_toolkit,
     link: 'https://ptaniya22.github.io/router_toolkit/',
     text: 'Проект отображает данные с учебного API с подробным описанием выбранного элемента. С применением библиотек Router и Redux Toolkit.',
-    language: 'JavaScript, HTML, CSS, React, Redux Toolkit, Router',
+    language: ['JavaScript', 'HTML', 'CSS', 'React', 'Redux Toolkit', 'Router'],
+    // language: 'JavaScript,HTML,CSS,React,Redux Toolkit,Router',
   },
 ];
