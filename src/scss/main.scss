@@ -114,7 +114,7 @@ ul {
     }
 
     &_proj {
-      max-width: 549px;
+      // max-width: 549px;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -176,7 +176,7 @@ ul {
       color: white;
       font-weight: 700;
       position: relative;
-      svg {
+      img {
         margin-left: 10px;
       }
       &::after {
@@ -199,6 +199,133 @@ ul {
         transition: all 0.3s;
       }
     }
+    &_skill {
+      &_name {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        padding-bottom: 10px;
+        & p {
+          color: white;
+          font-size: 24px;
+          font-weight: 700;
+        }
+        & img {
+          max-width: 50px;
+          width: 100%;
+        }
+      }
+      &_bar {
+        height: 24px;
+        background: var(--skills-area-color);
+        border-radius: 3px;
+      }
+      &_per {
+        height: 24px;
+        background: var(--hover-title-color);
+        border-radius: 3px;
+        position: relative;
+        animation: fillBars 2.5s 1;
+      }
+      &_per::before {
+        content: attr(per);
+        position: absolute;
+        padding: 4px 6px;
+        background: var(--color);
+        color: var(--background);
+        border-radius: 4px;
+        font-size: 12px;
+        top: -30px;
+        right: 0px;
+        transform: translateX(50%);
+      }
+      &_per::after {
+        content: "";
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: var(--color);
+        top: -13px;
+        right: 0;
+        transform: translateX(50%) rotate(45deg);
+        border-radius: 1px;
+      }
+      @keyframes fillBars {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      &_branch {
+        &_name {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          align-items: center;
+          padding-bottom: 10px;
+          margin-left: 30px;
+          margin-top: 20px;
+        }
+
+        & img {
+          max-width: 50px;
+          width: 100%;
+        }
+        & p {
+          color: white;
+          font-size: 24px;
+          font-weight: 700;
+        }
+        &_bar {
+          height: 20px;
+          background: var(--skills-area-color);
+          border-radius: 3px;
+          margin-left: 30px;
+          margin-top: 15px;
+        }
+        &_per {
+          height: 20px;
+          background: var(--hover-title-color);
+          border-radius: 3px;
+          position: relative;
+          animation: fillBars 2.5s 1;
+        }
+        &_per::before {
+          content: attr(per);
+          position: absolute;
+          padding: 4px 6px;
+          background: var(--color);
+          color: var(--background);
+          border-radius: 4px;
+          font-size: 12px;
+          top: -30px;
+          right: 0px;
+          transform: translateX(50%);
+        }
+        &_per::after {
+          content: "";
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          background: var(--color);
+          top: -13px;
+          right: 0;
+          transform: translateX(50%) rotate(45deg);
+          border-radius: 1px;
+        }
+        @keyframes fillBars {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }
 .active {
@@ -215,21 +342,3 @@ ul {
     }
   }
 }
-
-// .qwerty {
-//   background: teal;
-//   height: 100px;
-// }
-
-// .main__item_proj:hover {
-//   background: teal;
-//   cursor: pointer;
-// }
-
-// .main__item_routing span :hover {
-//   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-//   transition-duration: 0.15s;
-//   padding-bottom: 1px;
-//   border-bottom-width: 1px;
-//   border-color: var(--hover-title-color);
-// }
