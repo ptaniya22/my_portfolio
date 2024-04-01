@@ -7,29 +7,22 @@ import skills from '../skills.js';
 import rigthArrow from '../assets/images/arrow-right.svg';
 
 const list = [
-  { title: 'About me', anchor: 'about' },
-  { title: 'Projects', anchor: 'projects' },
-  { title: 'Skills', anchor: 'skills' },
-  { title: 'contacts', anchor: 'contacts' },
-  // { title: 'other', anchor: 'other' }
+  { title: 'Обо мне', anchor: 'about' },
+  { title: 'Проекты', anchor: 'projects' },
+  { title: 'Навыки', anchor: 'skills' },
+  { title: 'Контакты', anchor: 'contacts' },
 ];
-
-const arrLanguage = [];
-//   proj[1].language.split(',');
-// console.log(arrLanguage)
 
 const Portfolio = () => {
   return (
     <>
       <header className="header">
         <h1 className="header_title">
-          Musiyachenko <br />
-          Tatyana
+          Мусияченко <br />
+          Татьяна
         </h1>
-        <h2>Junior Frontend Engineer</h2>
+        <h2>Джуниор фронтенд разработчик</h2>
         <nav className="header_nav">
-          {/* <div className="header_nav__box"> */}
-
           <ul className="header_nav__list">
             {list.map(item => (
               <li key={item.title}>
@@ -41,8 +34,6 @@ const Portfolio = () => {
                   hashSpy={true}
                   smooth={true}
                   duration={500}
-                  // onClick={handleClick}
-                  // onClick={handleClick} className={click ? "header_nav__link active" : "header_nav__link"}>
                   className="header_nav__link"
                 >
                   <span className="header_nav__link_indicator"></span>

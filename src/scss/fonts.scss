@@ -1,9 +1,18 @@
-$Inter: ("Regular", 400), ("Medium", 500), ("Bold", 700);
+// $Inter: ("Regular", 400), ("Medium", 500), ("Bold", 700);
 
-@each $name, $weight in $Inter {
+// @each $name, $weight in $Inter {
+//   @font-face {
+//     font-family: "Inter";
+//     src: url("../assets/fonts/Inter-#{$name}.ttf");
+//     font-weight: $weight;
+//   }
+// }
+
+$Comfortaa: ("Regular", 400), ("Medium", 500), ("Bold", 700);
+@each $name, $weight in $Comfortaa {
   @font-face {
-    font-family: "Inter";
-    src: url("../assets/fonts/Inter-#{$name}.ttf");
+    font-family: "Comfortaa";
+    src: url("../assets/fonts/Comfortaa-#{$name}.ttf");
     font-weight: $weight;
   }
 }
