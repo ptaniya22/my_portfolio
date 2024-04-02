@@ -15,25 +15,23 @@ function App() {
     <>
       {/* <div className={wrapperClass}> */}
 
-      <div className="container">
-        <div className="box">
-          {/* <Portfolio/> */}
-          <BrowserRouter
-            basename={
-              process.env.NODE_ENV === 'production' ? '/my_portfolio' : '/'
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Portfolio />} />
-              <Route path="/projects/" element={<Projects />} />
-            </Routes>
-          </BrowserRouter>
+      {/* <div className="container"> */}
+      {/* <div className="box"> */}
+      {/* <Portfolio/> */}
+      <BrowserRouter
+        basename={process.env.NODE_ENV === 'production' ? '/my_portfolio' : '/'}
+      >
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/projects/" element={<Projects />} />
+        </Routes>
+      </BrowserRouter>
 
-          {/* <Navbar />
+      {/* <Navbar />
           
           <About /> */}
-        </div>
-      </div>
+      {/* </div> */}
+      {/* </div> */}
 
       {/* </div> */}
     </>

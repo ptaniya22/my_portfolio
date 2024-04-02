@@ -1,21 +1,20 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { usersSelector } from '../redux/project/ProjectSlice';
+// import { usersSelector, langSelector } from '../redux/project/ProjectSlice';
 import { getRepos } from '../redux/project/ProjectSlice';
+import { getLang } from '../redux/project/LangReposSlice';
 import Slider from 'react-slick';
-// import Loader from './loader/Loader';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-//  import { Link as LinkRouter } from 'react-router-dom'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = () => {
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
@@ -45,35 +44,58 @@ const Projects = () => {
     ],
   };
 
-  // const { repos } = useSelector(usersSelector);
   const dispatch = useDispatch();
   const userRepos = useSelector(state => state.repos.repos);
+  const userLang = useSelector(state => state.lang.lang);
   console.log('*****ReposUser is*****', userRepos);
+
+  console.log('*****Lang is*****', userLang);
 
   useEffect(() => {
     dispatch(getRepos());
+    // dispatch(getLang());
   }, []);
 
   return (
-    <div className="slider_box">
+    <div className="slider">
+      {/* <div className="slider__box"> */}
+
       <Slider {...settings}>
         {userRepos?.map(el => (
-          <div key={el.name} className="card">
-            {/* {console.log(el.name)} */}
-            <div className="card_top">
+          <div key={el.name} className="card ">
+            {/* {console.log( el.name)} */}
+            {/* {dispatch(getLang(el.name))} */}
+
+            <div className="card__top ">
               <img
                 src={`https://raw.githubusercontent.com/ptaniya22/${el.name}/main/${el.name}.jpg`}
                 alt=""
               />
             </div>
-            <div className="card_bottom">
-              <p style={{ fontSize: 40, fontWeight: 700 }}>{el.name}</p>
+            <div className="card__bottom">
+              <h2>{el.name}</h2>
+              <p>{el.created_at.slice(0, 10)}</p>
+              <div className="card__bottom_box">
+                <div>
+                  <p style={{ fontWeight: 700 }}>{el.description}</p>
+                </div>
+                <div>
+                  <p className="card__bottom_lang">{el.language}</p>
+                  <a href={el.homepage}>Перейти</a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
+        {/* {userLang?.map(item => (
+          <div key={item.name} className="card ">
+            {console.log(item.name)}
+            <p>{item}</p>
+          </div>
+        ))} */}
       </Slider>
-      )
     </div>
+    // {/* </div> */}
   );
 };
 
