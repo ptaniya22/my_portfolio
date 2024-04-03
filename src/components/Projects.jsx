@@ -58,6 +58,9 @@ const Projects = () => {
 
   return (
     <div className="slider">
+      <h1 className="slider__title">
+        <span>Мои проекты</span>
+      </h1>
       {/* <div className="slider__box"> */}
 
       <Slider {...settings}>
@@ -79,9 +82,17 @@ const Projects = () => {
                 <div>
                   <p style={{ fontWeight: 700 }}>{el.description}</p>
                 </div>
-                <div>
-                  <p className="card__bottom_lang">{el.language}</p>
-                  <a href={el.homepage}>Перейти</a>
+                <div className="card__bottom_box_lang ">
+                  <ul className="main__item_proj_lang ">
+                    {el.topics?.map((item, index) => (
+                      <li className="main__item_proj_lang_el" key={index}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* <p className="card__bottom_lang">{el.language}</p> */}
+                  <a href={el.git_url}>Перейти</a>
                 </div>
               </div>
             </div>
@@ -95,7 +106,6 @@ const Projects = () => {
         ))} */}
       </Slider>
     </div>
-    // {/* </div> */}
   );
 };
 

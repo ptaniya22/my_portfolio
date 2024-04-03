@@ -105,7 +105,9 @@ const Portfolio = () => {
 
                       <ul className="main__item_proj_lang">
                         {el.language.map((item, index) => (
-                          <li key={index}>{item}</li>
+                          <li className="main__item_proj_lang_el" key={index}>
+                            {item}
+                          </li>
                         ))}
                       </ul>
                     </div>
