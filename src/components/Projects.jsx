@@ -46,10 +46,10 @@ const Projects = () => {
 
   const dispatch = useDispatch();
   const userRepos = useSelector(state => state.repos.repos);
-  const userLang = useSelector(state => state.lang.lang);
+  // const userLang = useSelector(state => state.lang.lang);
   console.log('*****ReposUser is*****', userRepos);
 
-  console.log('*****Lang is*****', userLang);
+  // console.log('*****Lang is*****', userLang);
 
   useEffect(() => {
     dispatch(getRepos());

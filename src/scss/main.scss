@@ -1,11 +1,16 @@
 @import url(./fonts.scss);
 
 :root {
+  --active-text: #e2e8f0;
   --background: rgb(15 23 42);
   --color: rgb(148 163 184);
-  --hover-title-color: rgb(94 234 212);
+  --hover-title-color: rgb(7, 237, 203);
+  --lang-area: rgba(45, 212, 191, 0.1);
   --skills-area-color: rgb(19 78 74);
   --hover-item-color: rgba(148, 163, 184, 0.1);
+  --shadow: rgba(255, 255, 255, 0.5);
+  --btn: rgb(7, 237, 203);
+  // --btn-fill:;
 }
 
 * {
@@ -18,8 +23,6 @@
 }
 
 body {
-  // background-image: url(../assets/images/2.avif);
-  // background-size: 100% 100%;
   background: var(--background);
 }
 
@@ -56,7 +59,7 @@ ul {
   &_title {
     font-weight: 700;
     font-size: 48px;
-    color: #e2e8f0;
+    color: --active-text;
     margin-bottom: 20px;
   }
 
@@ -80,12 +83,12 @@ ul {
     }
 
     &:hover &_text {
-      color: #e2e8f0;
+      color: --active-text;
       transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
       // transition: all 0.15s;
     }
     &:hover &_indicator {
-      background-color: #e2e8f0;
+      background-color: --active-text;
       transition: all 0.15s;
       width: 4rem;
     }
@@ -117,7 +120,7 @@ ul {
       line-height: 24px;
       font-size: 20px;
       & span {
-        color: #e2e8f0;
+        color: var(--active-text);
         font-weight: 500;
       }
     }
@@ -135,7 +138,7 @@ ul {
         background: var(--hover-item-color);
         cursor: pointer;
         border-radius: 5px;
-        box-shadow: 0px -0.5px 1px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: 0px -0.5px 1px 0px var(--shadow);
         transition: all 0.15s;
       }
       &:hover &_link {
@@ -156,10 +159,13 @@ ul {
         max-height: 100px;
       }
       &_link {
-        color: white;
+        color: var(--active-text);
         font-weight: 700;
         display: flex;
         gap: 10px;
+      }
+      & svg {
+        fill: inherit;
       }
       &_lang {
         display: flex;
@@ -172,7 +178,7 @@ ul {
         &_el {
           color: var(--hover-title-color);
           font-size: 13px;
-          background-color: rgba(45, 212, 191, 0.1);
+          background-color: var(--lang-area);
           border-radius: 9999px;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
@@ -181,11 +187,13 @@ ul {
         }
       }
     }
+
     &_routing {
       display: inline-block;
-      color: white;
+      color: var(--active-text);
       font-weight: 700;
       position: relative;
+
       img {
         margin-left: 10px;
       }
@@ -217,7 +225,7 @@ ul {
         align-items: center;
         padding-bottom: 10px;
         & p {
-          color: white;
+          color: var(--active-text);
           font-size: 24px;
           font-weight: 700;
         }
@@ -243,7 +251,7 @@ ul {
         position: absolute;
         padding: 4px 6px;
         background: var(--color);
-        color: var(--background);
+        color: white;
         border-radius: 4px;
         font-size: 12px;
         top: -30px;
@@ -285,7 +293,7 @@ ul {
           width: 100%;
         }
         & p {
-          color: white;
+          color: var(--active-text);
           font-size: 24px;
           font-weight: 700;
         }
@@ -308,7 +316,7 @@ ul {
           position: absolute;
           padding: 4px 6px;
           background: var(--color);
-          color: var(--background);
+          color: white;
           border-radius: 4px;
           font-size: 12px;
           top: -30px;
@@ -341,12 +349,13 @@ ul {
 .active {
   .header_nav__link {
     &_text {
-      color: #e2e8f0;
+      // font-weight: 700;
+      color: var(--active-text);
       transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
       // transition: all 0.15s;
     }
     &_indicator {
-      background-color: #e2e8f0;
+      background-color: var(--active-text);
       width: 4rem;
       transition: all 0.15s;
     }
@@ -458,3 +467,16 @@ ul {
   margin: 0 -10px;
 }
 /***********Slider End*************/
+
+.wrapper.dark {
+  background: rgb(213, 214, 214);
+  --color: rgb(91, 84, 84);
+  --active-text: black;
+  --hover-title-color: rgb(4, 249, 212);
+  // --skills-area-color: rgb(0, 29, 27);
+  --lang-area: rgb(18, 76, 72);
+  --hover-item-color: rgb(182, 176, 176);
+  --shadow: rgb(18, 76, 72);
+  // --hover-title-color: rgb(37, 172, 163);
+  --btn: rgb(24, 123, 118);
+}
