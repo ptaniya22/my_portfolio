@@ -92,7 +92,7 @@ const Projects = () => {
                   </ul>
 
                   {/* <p className="card__bottom_lang">{el.language}</p> */}
-                  <a href={el.git_url}>Перейти</a>
+                  <a href={el.clone_url}>Перейти</a>
                 </div>
               </div>
             </div>
